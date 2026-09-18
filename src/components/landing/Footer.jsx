@@ -1,3 +1,5 @@
+'use client';
+
 import {
   Arrow,
   Container,
@@ -5,18 +7,21 @@ import {
   Pill,
   PrimaryButton,
 } from "./LandingUi";
+import { useI18n } from '@/i18n/LanguageProvider';
 
 const socialLinks = ["LinkedIn", "GitHub", "Instagram"];
 
 export default function Footer() {
+  const { t } = useI18n();
+
   return (
 <footer id="contact" data-layer="Footer" className="Footer w-full h-full self-stretch px-7 lg:px-8 pt-12 pb-12 bg-stone-100 inline-flex flex-col justify-start items-start">
     <div data-layer="Container" className="Container w-full flex flex-col justify-start items-start gap-10">
-        <div data-layer="Floating CTA Card" className="NeoEditorialFloatingCtaCard self-stretch px-6 py-10 lg:p-14 relative bg-white rounded-[40px] shadow-[0px_20px_50px_0px_rgba(0,0,0,0.08)] outline outline-1 outline-offset-[-1px] outline-black/10 flex flex-col justify-start items-start overflow-hidden">
+        <div data-layer="Floating CTA Card" className="NeoEditorialFloatingCtaCard self-stretch px-8 py-10 lg:p-14 relative bg-white rounded-[40px] shadow-[0px_20px_50px_0px_rgba(0,0,0,0.08)] outline outline-1 outline-offset-[-1px] outline-black/10 flex flex-col justify-start items-start overflow-hidden">
             <div data-layer="Overlay+Blur" className="OverlayBlur size-96 left-[879px] top-[-63px] absolute bg-blue-100/30 rounded-full blur-[32px]" />
-            <div data-layer="Overlay+Blur" className="OverlayBlur size-80 left-[-63px] top-[229px] absolute bg-lime-200/30 rounded-full blur-[32px]" />
-            <div data-layer="Container" className="Container self-stretch inline-flex flex-wrap justify-center lg:justify-between items-center gap-5">
-                <div data-layer="Container" className="Container inline-flex flex-col justify-start items-start gap-6 min-w-0">
+            <div data-layer="Overlay+Blur" className="OverlayBlur z-0 size-80 left-[-63px] top-[229px] absolute bg-lime-200/30 rounded-full blur-[32px]" />
+            <div data-layer="Container" className="Container z-10 self-stretch inline-flex flex-wrap justify-center lg:justify-between items-center gap-5">
+                <div data-layer="Container" className="Container md:w-min inline-flex flex-col justify-start items-start gap-6">
                     <div data-layer="Background+Border" className="BackgroundBorder size- px-4 py-2 bg-gray-200 rounded-full outline outline-1 outline-offset-[-1px] outline-black/10 inline-flex justify-start items-center gap-2">
                         <div data-svg-wrapper data-layer="Background" className="Background">
                             <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -24,21 +29,21 @@ export default function Footer() {
                             </svg>
                         </div>
                         <div data-layer="Container" className="Container size- inline-flex flex-col justify-start items-start">
-                            <div data-layer="Text" className="Text justify-center text-zinc-900 text-xs font-semibold font-['Space_Grotesk'] uppercase leading-4 tracking-wide">OPEN TO NEW OPPORTUNITIES</div>
+                            <div data-layer="Text" className="Text justify-center text-zinc-900 text-xs font-semibold font-['Space_Grotesk'] uppercase leading-4 tracking-wide">{t.footer.eyebrow}</div>
                         </div>
                     </div>
                     <div data-layer="Heading 2" className="Heading2 self-stretch h-fit lg:max-w-[75%] inline-flex flex-wrap gap-2">
-                        <div data-layer="Text" className="Text justify-center text-zinc-900 text-4xl font-semibold font-['Syne'] leading-[50px]">Let&apos;s </div>
+                        <div data-layer="Text" className="Text justify-center text-zinc-900 text-4xl font-semibold font-['Syne'] leading-[50px]">{t.footer.headlineLead}</div>
                         <div data-layer="Background+Border" className="BackgroundBorder size- px-2.5 py-1 bg-stone-50 rounded-full outline outline-1 outline-offset-[-1px] outline-black inline-flex justify-start items-start">
-                            <div data-layer="Text" className="Text justify-center text-zinc-900 text-4xl font-semibold font-['Syne'] leading-[50px]">Test.</div>
+                            <div data-layer="Text" className="Text justify-center text-zinc-900 text-4xl font-semibold font-['Syne'] leading-[50px]">{t.footer.headlineTest}</div>
                         </div>
                         <div data-layer="Background+Border" className="BackgroundBorder size- px-2.5 py-1 bg-blue-200 rounded-full outline outline-1 outline-offset-[-1px] outline-indigo-300 inline-flex justify-start items-start">
-                            <div data-layer="Text" className="Text justify-center text-slate-600 text-4xl font-semibold font-['Syne'] leading-[50px]">Build.</div>
+                            <div data-layer="Text" className="Text justify-center text-slate-600 text-4xl font-semibold font-['Syne'] leading-[50px]">{t.footer.headlineBuild}</div>
                         </div>
                         <div data-layer="Overlay+Border" className="OverlayBorder size- px-2.5 py-1 bg-lime-300/30 rounded-full outline outline-1 outline-offset-[-1px] outline-lime-300 inline-flex justify-start items-start">
-                            <div data-layer="Text" className="Text justify-center text-zinc-900 text-4xl font-semibold font-['Syne'] leading-[50px]">Improve.</div>
+                            <div data-layer="Text" className="Text justify-center text-zinc-900 text-4xl font-semibold font-['Syne'] leading-[50px]">{t.footer.headlineImprove}</div>
                         </div>
-                        <div data-layer="Text" className="Text justify-center text-zinc-900 text-4xl font-semibold font-['Syne'] leading-[50px]"> Together.</div>
+                        <div data-layer="Text" className="Text justify-center text-zinc-900 text-4xl font-semibold font-['Syne'] leading-[50px]">{t.footer.headlineTogether}</div>
                     </div>
                     <div data-layer="Container" className="Container w-full lg:w-[576px] max-w-[576px] flex flex-col justify-start items-start gap-1">
                         <div data-layer="Container" className="Container self-stretch inline-flex justify-start items-center gap-2">
@@ -47,7 +52,7 @@ export default function Footer() {
                                 <rect width="6" height="6" rx="3" fill="black"/>
                                 </svg>
                             </div>
-                            <div data-layer="Text" className="Text justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">QA engineering roles, manual and end-to-end testing</div>
+                            <div data-layer="Text" className="Text justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">{t.footer.bullet1}</div>
                         </div>
                         <div data-layer="Container" className="Container self-stretch inline-flex justify-start items-center gap-2">
                             <div data-svg-wrapper data-layer="Container" className="Container">
@@ -55,7 +60,7 @@ export default function Footer() {
                                 <path d="M4.66667 13.3333L0 8.66667L0.933333 7.73333L4 10.7833V0H5.33333V10.7833L8.4 7.71667L9.33333 8.66667L4.66667 13.3333V13.3333" fill="#444748"/>
                                 </svg>
                             </div>
-                            <div data-layer="Text" className="Text justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">Fullstack web development with Next.js, Node.js &amp; Vue.js</div>
+                            <div data-layer="Text" className="Text justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">{t.footer.bullet2}</div>
                         </div>
                         <div data-layer="Container" className="Container self-stretch inline-flex justify-start items-center gap-2">
                             <div data-svg-wrapper data-layer="Container" className="Container">
@@ -63,30 +68,30 @@ export default function Footer() {
                                 <path d="M4 13.3333V2.55L0.933333 5.6L0 4.66667L4.66667 0L9.33333 4.66667L8.4 5.61667L5.33333 2.55V13.3333H4V13.3333" fill="#444748"/>
                                 </svg>
                             </div>
-                            <div data-layer="Text" className="Text justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">Based in Bandung, West Java · open to hybrid &amp; remote</div>
+                            <div data-layer="Text" className="Text justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">{t.footer.bullet3}</div>
                         </div>
                     </div>
                     <div data-layer="Container" className="Container self-stretch pt-2 inline-flex flex-wrap justify-start items-center gap-0">
-                        <div data-layer="Link" className="Link cursor-pointer size- px-8 py-4 relative bg-black rounded-full flex justify-start items-center gap-3">
+                        <a href="mailto:nabilahnajwa808@gmail.com" data-layer="Link" className="Link cursor-pointer size- px-8 py-4 relative bg-black rounded-full flex justify-start items-center gap-3">
                             {/* <div data-layer="Link:shadow" className="LinkShadow w-60 h-14 left-0 top-0 absolute bg-white/0 rounded-full shadow-[0px_2px_4px_-2px_rgba(0,0,0,0.10)] shadow-md" /> */}
                             <div data-layer="Container" className="Container size- inline-flex flex-col justify-start items-start">
-                                <div data-layer="Text" className="Text justify-center text-white text-base font-normal font-['Space_Grotesk'] leading-6">Send an Email</div>
+                                <div data-layer="Text" className="Text justify-center text-white text-base font-normal font-['Space_Grotesk'] leading-6">{t.footer.ctaEmail}</div>
                             </div>
                             <div data-svg-wrapper data-layer="Container" className="Container">
                                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1.05 9.75L0 8.7L7.2 1.5H0.75V0H9.75V9H8.25V2.55L1.05 9.75V9.75" fill="white"/>
                                 </svg>
                             </div>
-                        </div>
+                        </a>
                         <div data-layer="Link" className="Link cursor-pointer size- px-8 py-4 rounded-full inline-flex flex-col justify-start items-start">
-                            <div data-layer="Text" className="Text justify-center text-zinc-900 text-base font-normal font-['Space_Grotesk'] leading-6">View LinkedIn</div>
+                            <a href="https://www.linkedin.com/in/nabilah-aysyah-0843b8384/" target="_blank" data-layer="Text" className="Text justify-center text-zinc-900 text-base font-normal font-['Space_Grotesk'] leading-6">{t.footer.ctaLinkedin}</a>
                         </div>
                     </div>
                 </div>
-                <div data-layer="Background+Border+Shadow" className="BackgroundBorderShadow w-full lg:w-fit h-fit p-6 bg-stone-100 rounded-[32px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-black/10 inline-flex flex-col justify-start items-start gap-4 min-w-0">
+                <div data-layer="Background+Border+Shadow" className="BackgroundBorderShadow w-full lg:w-2/5 h-fit p-6 bg-stone-100 rounded-[32px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-black/10 inline-flex flex-col justify-start items-start gap-4 min-w-0">
                     <div data-layer="Container" className="Container self-stretch pr-[0.01px] inline-flex justify-between items-center flex-wrap">
                         <div data-layer="Container" className="Container size- inline-flex flex-col justify-start items-start">
-                            <div data-layer="Text" className="Text justify-center text-zinc-700 text-xs font-semibold font-['Space_Grotesk'] uppercase leading-4 tracking-wide">GET IN TOUCH</div>
+                            <div data-layer="Text" className="Text justify-center text-zinc-700 text-xs font-semibold font-['Space_Grotesk'] uppercase leading-4 tracking-wide">{t.footer.getInTouch}</div>
                         </div>
                         <div data-layer="Overlay" className="Overlay size-8 bg-blue-100/30 rounded-full flex justify-center items-center">
                             <div data-svg-wrapper data-layer="Container" className="Container">
@@ -97,7 +102,7 @@ export default function Footer() {
                         </div>
                     </div>
                     <div data-layer="Container" className="Container self-stretch flex flex-col justify-start items-start">
-                        <div data-layer="“Quality is never an accident // it is the result of careful testing.”" className="CollaborationCanChangeTheWorldCraftingToolsForThinkersAndCreators self-stretch justify-center text-zinc-900 text-sm font-normal font-['Space_Grotesk'] leading-5">“Quality is never an accident //<br/>it is the result of careful testing.”</div>
+                        <div data-layer="“Quality is never an accident // it is the result of careful testing.”" className="CollaborationCanChangeTheWorldCraftingToolsForThinkersAndCreators self-stretch justify-center text-zinc-900 text-sm font-normal font-['Space_Grotesk'] leading-5">{t.footer.quote1}<br/>{t.footer.quote2}</div>
                     </div>
                     <div data-layer="HorizontalBorder" className="Horizontalborder self-stretch pt-2 border-t border-black/10 inline-flex justify-between items-center flex-wrap">
                         <div data-layer="Container" className="Container size- flex justify-start items-center gap-1">
@@ -116,7 +121,7 @@ export default function Footer() {
                             </div>
                         </div>
                         <div data-layer="Container" className="Container size- inline-flex flex-col justify-start items-start">
-                            <div data-layer="Text" className="Text justify-center text-zinc-700 text-xs font-semibold font-['Space_Grotesk'] leading-4">QA &amp; Fullstack</div>
+                            <div data-layer="Text" className="Text justify-center text-zinc-700 text-xs font-semibold font-['Space_Grotesk'] leading-4">QA &middot; PM &middot; Fullstack</div>
                         </div>
                     </div>
                 </div>
@@ -126,39 +131,39 @@ export default function Footer() {
             <div className="Group1 w-full inline-flex justify-start items-start">
                 <div data-layer="Container" className="Container w-full inline-flex flex-col justify-start items-start gap-4 min-w-0">
                     <div data-layer="Heading 4" className="Heading4 self-stretch flex flex-col justify-start items-start">
-                        <div data-layer="Team" className="Team self-stretch justify-center text-zinc-900 text-xl font-semibold font-['Space_Grotesk'] leading-6">Contact</div>
+                        <div data-layer="Team" className="Team self-stretch justify-center text-zinc-900 text-xl font-semibold font-['Space_Grotesk'] leading-6">{t.footer.contactTitle}</div>
                     </div>
                     <div data-layer="List" className="List self-stretch flex flex-col justify-start items-start gap-3">
                         {/* <div data-layer="Item" className="Item self-stretch flex flex-col justify-start items-start">
                             <div data-layer="Email address" className="AlexVance self-stretch justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">nabilahnajwa808@gmail.com</div>
                         </div> */}
                         <div data-layer="Item" className="Item self-stretch flex flex-col justify-start items-start">
-                            <div data-layer="Bandung, West Java" className="DesignOps self-stretch justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">Bandung, West Java</div>
+                            <div data-layer="Bandung, West Java" className="DesignOps self-stretch justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">{t.footer.location}</div>
                         </div>
                         <div data-layer="Item" className="Item self-stretch flex flex-col justify-start items-start">
-                            <div data-layer="Contributors" className="Contributors self-stretch justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">Indonesian &amp; English</div>
+                            <div data-layer="Contributors" className="Contributors self-stretch justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">{t.footer.languages}</div>
                         </div>
                         <div data-layer="Item" className="Item self-stretch flex flex-col justify-start items-start">
-                            <div data-layer="Download CV" className="JoinTheStudio self-stretch justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">Download CV</div>
+                            <div data-layer="Download CV" className="JoinTheStudio self-stretch justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">{t.footer.downloadCv}</div>
                         </div>
                     </div>
                 </div>
                 <div data-layer="Container" className="Container w-full inline-flex flex-col justify-start items-start gap-4 min-w-0">
                     <div data-layer="Heading 4" className="Heading4 self-stretch flex flex-col justify-start items-start">
-                        <div data-layer="Legal" className="Legal self-stretch justify-center text-zinc-900 text-xl font-semibold font-['Space_Grotesk'] leading-6">Focus</div>
+                        <div data-layer="Legal" className="Legal self-stretch justify-center text-zinc-900 text-xl font-semibold font-['Space_Grotesk'] leading-6">{t.footer.focusTitle}</div>
                     </div>
                     <div data-layer="List" className="List self-stretch flex flex-col justify-start items-start gap-3">
                         <div data-layer="Item" className="Item self-stretch flex flex-col justify-start items-start">
-                            <div data-layer="Manual Testing" className="PrivacyPolicy self-stretch justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">Manual Testing</div>
+                            <div data-layer="Manual Testing" className="PrivacyPolicy self-stretch justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">{t.footer.focus1}</div>
                         </div>
                         <div data-layer="Item" className="Item self-stretch flex flex-col justify-start items-start">
-                            <div data-layer="E2E &amp; Regression" className="TermsOfService self-stretch justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">E2E &amp; Regression</div>
+                            <div data-layer="E2E &amp; Regression" className="TermsOfService self-stretch justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">{t.footer.focus2}</div>
                         </div>
                         <div data-layer="Item" className="Item self-stretch flex flex-col justify-start items-start">
-                            <div data-layer="Legal & Rights" className="LegalRights self-stretch justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">API Testing</div>
+                            <div data-layer="Legal & Rights" className="LegalRights self-stretch justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">{t.footer.focus3}</div>
                         </div>
                         <div data-layer="Item" className="Item self-stretch flex flex-col justify-start items-start">
-                            <div data-layer="License & Usage" className="LicenseUsage self-stretch justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">Fullstack Development</div>
+                            <div data-layer="License & Usage" className="LicenseUsage self-stretch justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">{t.footer.focus4}</div>
                         </div>
                     </div>
                 </div>
@@ -166,7 +171,7 @@ export default function Footer() {
             <div className="Group2 w-full inline-flex justify-start items-start">
                 <div data-layer="Container" className="Container w-full inline-flex flex-col justify-start items-start gap-4 min-w-0">
                     <div data-layer="Heading 4" className="Heading4 self-stretch flex flex-col justify-start items-start">
-                        <div data-layer="Socials" className="Socials self-stretch justify-center text-zinc-900 text-xl font-semibold font-['Space_Grotesk'] leading-6">Socials</div>
+                        <div data-layer="Socials" className="Socials self-stretch justify-center text-zinc-900 text-xl font-semibold font-['Space_Grotesk'] leading-6">{t.footer.socialsTitle}</div>
                     </div>
                     <div data-layer="List" className="List self-stretch flex flex-col justify-start items-start gap-3">
                         <div data-layer="Item → Link" className="ItemLink self-stretch inline-flex justify-start items-center gap-1">
@@ -201,7 +206,7 @@ export default function Footer() {
                         </div>
                         <div data-layer="Item → Link" className="ItemLink self-stretch inline-flex justify-start items-center gap-1">
                             <div data-layer="Container" className="Container size- inline-flex flex-col justify-start items-start">
-                                <div data-layer="Text" className="Text justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">Portfolio</div>
+                                <div data-layer="Text" className="Text justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">{t.footer.socialPortfolio}</div>
                             </div>
                             <div data-svg-wrapper data-layer="Container" className="Container">
                                 <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -213,23 +218,23 @@ export default function Footer() {
                 </div>
                 <div data-layer="Container" className="Container w-full inline-flex flex-col justify-start items-start gap-4 min-w-0">
                     <div data-layer="Heading 4" className="Heading4 self-stretch flex flex-col justify-start items-start">
-                        <div data-layer="Navigation" className="Navigation self-stretch justify-center text-zinc-900 text-xl font-semibold font-['Space_Grotesk'] leading-6">Navigation</div>
+                        <div data-layer="Navigation" className="Navigation self-stretch justify-center text-zinc-900 text-xl font-semibold font-['Space_Grotesk'] leading-6">{t.footer.navigationTitle}</div>
                     </div>
                     <div data-layer="List" className="List self-stretch flex flex-col justify-start items-start gap-3">
                         <div data-layer="Item" className="Item self-stretch flex flex-col justify-start items-start">
-                            <a data-layer="About Me" href="#about" className="AboutStudio self-stretch justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">About Me</a>
+                            <a data-layer="About Me" href="#about" className="AboutStudio self-stretch justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">{t.footer.navAbout}</a>
                         </div>
                         <div data-layer="Item" className="Item self-stretch flex flex-col justify-start items-start">
-                            <a data-layer="Featured Work" href="#work" className="FeaturedWork self-stretch justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">Featured Work</a>
+                            <a data-layer="Featured Work" href="#work" className="FeaturedWork self-stretch justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">{t.footer.navWork}</a>
                         </div>
                         <div data-layer="Item" className="Item self-stretch flex flex-col justify-start items-start">
-                            <a data-layer="Capabilities" href="#quality-assurance" className="Capabilities self-stretch justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">Skills</a>
+                            <a data-layer="Capabilities" href="#quality-assurance" className="Capabilities self-stretch justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">{t.footer.navSkills}</a>
                         </div>
                         <div data-layer="Item" className="Item self-stretch flex flex-col justify-start items-start">
-                            <a data-layer="Pricing & Retainer" href="#experience" className="PricingRetainer self-stretch justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">Experience</a>
+                            <a data-layer="Pricing & Retainer" href="#experience" className="PricingRetainer self-stretch justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">{t.footer.navExperience}</a>
                         </div>
                         <div data-layer="Item" className="Item self-stretch flex flex-col justify-start items-start">
-                            <a data-layer="Contact" href="#contact" className="ContactAlex self-stretch justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">Contact</a>
+                            <a data-layer="Contact" href="#contact" className="ContactAlex self-stretch justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5">{t.footer.contactTitle}</a>
                         </div>
                     </div>
                 </div>
@@ -237,10 +242,10 @@ export default function Footer() {
         </div>
         <div data-layer="Bottom Sub-Footer" className="BottomSubFooter self-stretch pt-8 inline-flex justify-between items-center flex-wrap">
             <div data-layer="Container" className="Container size- inline-flex flex-col justify-start items-start">
-                <div data-layer="Text" className="Text justify-center text-zinc-700 text-xs font-medium font-['Space_Grotesk'] leading-4">© 2026 Nabilah Najwa Aysyah. All rights reserved.</div>
+                <div data-layer="Text" className="Text justify-center text-zinc-700 text-xs font-medium font-['Space_Grotesk'] leading-4">{t.footer.copyright}</div>
             </div>
             <div data-layer="Container" className="Container size- opacity-60 inline-flex flex-col justify-start items-start">
-                <div data-layer="Text" className="Text justify-center text-zinc-700 text-xs font-medium font-['Space_Grotesk'] leading-4">Software Quality Assurance Engineer &amp; Fullstack Web Developer.</div>
+                <div data-layer="Text" className="Text justify-center text-zinc-700 text-xs font-medium font-['Space_Grotesk'] leading-4">{t.footer.role}</div>
             </div>
         </div>
     </div>
