@@ -6,12 +6,14 @@ import Header from './Header';
 import Hero from './Hero';
 import QualityAssurance from './QualityAssurance';
 import ScrollReveal from './ScrollReveal';
+import Testimonial from './Testimonial';
 import WebDeveloper from './WebDeveloper';
 import Work from './Work';
+import { LanguageProvider } from '@/i18n/LanguageProvider';
 
 export default function LandingPage() {
   return (
-    <>
+    <LanguageProvider>
       <Header />
       <main>
         <Hero />
@@ -21,9 +23,10 @@ export default function LandingPage() {
         <QualityAssurance />
         <Career />
         <Certificates />
+        <Testimonial />
       </main>
       <Footer />
       <ScrollReveal />
-    </>
+    </LanguageProvider>
   );
 }

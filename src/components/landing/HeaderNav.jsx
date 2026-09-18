@@ -1,13 +1,15 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useI18n } from '@/i18n/LanguageProvider';
 
+// [dictionary key, section anchor]
 const links = [
-  ['About', '#about'],
-  ['Work', '#work'],
-  ['Development', '#development'],
-  ['QA', '#quality-assurance'],
-  ['Experience', '#experience']
+  ['about', '#about'],
+  ['work', '#work'],
+  ['development', '#development'],
+  ['qa', '#quality-assurance'],
+  ['experience', '#experience']
 ];
 
 // Matches the sections' scroll-mt-24 (96px), which clears the 80px fixed header.
@@ -27,6 +29,7 @@ const TEXT = "Text justify-center text-zinc-700 text-sm font-normal font-['Space
  * than testing which section has crossed the header line.
  */
 export default function HeaderNav() {
+  const { t } = useI18n();
   const [active, setActive] = useState(links[0][1]);
 
   useEffect(() => {
@@ -55,8 +58,8 @@ export default function HeaderNav() {
   }, []);
 
   return (
-    <nav data-layer="Nav" className="Nav size- max-md:hidden flex justify-start items-center gap-4 lg:gap-8 min-w-0" aria-label="Main">
-      {links.map(([label, href]) => {
+    <nav data-layer="Nav" className="Nav size- max-md:hidden flex justify-start items-center gap-4 lg:gap-8 min-w-0" aria-label={t.nav.ariaLabel}>
+      {links.map(([key, href]) => {
         const isActive = href === active;
         return (
           <a
@@ -66,7 +69,7 @@ export default function HeaderNav() {
             aria-current={isActive ? 'true' : undefined}
             className={isActive ? ACTIVE_LINK : LINK}
           >
-            <div data-layer="Text" className={isActive ? ACTIVE_TEXT : TEXT}>{label}</div>
+            <div data-layer="Text" className={`4k:text-xl ${isActive ? ACTIVE_TEXT : TEXT}`}>{t.nav[key]}</div>
           </a>
         );
       })}

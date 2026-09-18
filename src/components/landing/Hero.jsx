@@ -1,3 +1,5 @@
+'use client';
+
 import HeroAnimation from "./HeroAnimation";
 import {
   Arrow,
@@ -6,85 +8,91 @@ import {
   Pill,
   PrimaryButton,
 } from "./LandingUi";
+import { useI18n } from '@/i18n/LanguageProvider';
 
+// Disabled: unused placeholder data, and its figures are not in the CV.
+/*
 const stats = [
   ["4+", "Years Exp.", "bg-[#eafade]"],
   ["30+", "Projects", "bg-[#cce5ff]"],
   ["99%", "Satisfaction", "bg-[#eeeeec]"],
 ];
+*/
 
 export default function Hero() {
+  const { t } = useI18n();
+
   return (
-    <section id="top" data-layer="Hero Section" className="HeroSection self-stretch w-full h-full lg:max-h-[calc(100vh-80px)] px-7 py-8 mt-5 lg:mt-10 lg:p-10 flex justify-start items-start overflow-hidden">
-        <div data-layer="Container" className="Container w-full h-full flex flex-col lg:flex-row justify-start items-start lg:gap-9 gap-6">
-            <div className="LeftColumnTypographyBadges w-full relative inline-flex flex-col justify-start items-start gap-5 lg:gap-7">
-                <div data-layer="Overlay+Blur" className="OverlayBlur size-72 z-[-1] left-[-40px] top-[-40px] absolute bg-lime-300/20 rounded-full blur-[32px]" />
-                <div data-layer="Overlay+Blur" className="OverlayBlur size-80 left-[250px] top-[287px] absolute bg-blue-100/20 rounded-full blur-[32px]" />
-                <div data-layer="Outlined Pill Badges" className="OutlinedPillBadges self-stretch inline-flex justify-between lg:justify-start items-center gap-4">
-                    <div data-layer="Overlay+Border+Shadow" className="OverlayBorderShadow size- px-2 py-2 sm:px-4  sm:py-2 bg-blue-100/20 rounded-full shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-indigo-300 inline-flex flex-col justify-start items-start">
-                        <div data-layer="Text" className="Text justify-center text-zinc-900 text-xs font-semibold font-['Space_Grotesk'] uppercase leading-4 tracking-wide">TEST.</div>
+    <section id="top" data-layer="Hero Section" className="HeroSection self-stretch w-full h-full 4k:max-h-[1330px] px-7 py-8 mt-0 lg:mt-10 4k:mt-20 lg:p-10 4k:px-16 4k:py-16 flex justify-start items-start overflow-hidden">
+        <div data-layer="Container" className="Container w-full h-full inline-flex flex-wrap justify-between items-start lg:gap-9 gap-6">
+            <div className="LeftColumnTypographyBadges lg:flex-1 lg:max-w-[50%] w-full 4k:max-w-[60%] relative inline-flex flex-col justify-start items-start gap-5 lg:gap-7 4k:gap-16">
+                <div data-layer="Overlay+Blur" className="OverlayBlur size-72 z-[-1] left-[-40px] top-[-40px] absolute bg-[#A7D38433]/30 rounded-full blur-[32px]" />
+                <div data-layer="Overlay+Blur" className="OverlayBlur size-80 z-[-1] left-[250px] top-[287px] absolute bg-[#CCE5FF66]/50 rounded-full blur-[32px]" />
+                <div data-layer="Outlined Pill Badges" className="OutlinedPillBadges self-stretch inline-flex justify-between lg:justify-start items-center gap-4 4k:gap-7">
+                    <div data-layer="Overlay+Border+Shadow" className="OverlayBorderShadow size- px-2 py-2 sm:px-4 sm:py-2 4k:px-7 bg-blue-100/20 rounded-full shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-indigo-300 inline-flex flex-col justify-start items-start">
+                        <div data-layer="Text" className="Text justify-center text-zinc-900 text-xs 4k:text-xl font-semibold font-['Space_Grotesk'] uppercase leading-4 tracking-wide">{t.hero.badgeTest}</div>
                     </div>
-                    <div data-layer="Overlay+Border+Shadow" className="OverlayBorderShadow size- px-2 py-2 sm:px-4  sm:py-2 bg-lime-300/30 rounded-full shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-lime-300 inline-flex flex-col justify-start items-start">
-                        <div data-layer="Text" className="Text justify-center text-zinc-900 text-xs font-semibold font-['Space_Grotesk'] uppercase leading-4 tracking-wide">AUTOMATE.</div>
+                    <div data-layer="Overlay+Border+Shadow" className="OverlayBorderShadow size- px-2 py-2 sm:px-4 sm:py-2 4k:px-7 bg-lime-300/30 rounded-full shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-lime-300 inline-flex flex-col justify-start items-start">
+                        <div data-layer="Text" className="Text justify-center text-zinc-900 text-xs 4k:text-xl font-semibold font-['Space_Grotesk'] uppercase leading-4 tracking-wide">{t.hero.badgeAutomate}</div>
                     </div>
-                    <div data-layer="Background+Border+Shadow" className="BackgroundBorderShadow size- px-2 py-2 sm:px-4  sm:py-2 bg-blue-200 rounded-full shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-indigo-300 inline-flex flex-col justify-start items-start">
-                        <div data-layer="Text" className="Text justify-center text-zinc-900 text-xs font-semibold font-['Space_Grotesk'] uppercase leading-4 tracking-wide">DEVELOP.</div>
+                    <div data-layer="Background+Border+Shadow" className="BackgroundBorderShadow size- px-2 py-2 sm:px-4 sm:py-2 4k:px-7 bg-blue-200 rounded-full shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-indigo-300 inline-flex flex-col justify-start items-start">
+                        <div data-layer="Text" className="Text justify-center text-zinc-900 text-xs 4k:text-xl font-semibold font-['Space_Grotesk'] uppercase leading-4 tracking-wide">{t.hero.badgeDevelop}</div>
                     </div>
-                    <div data-layer="Overlay+Border+Shadow" className="OverlayBorderShadow size- px-2 py-2 sm:px-4  sm:py-2 bg-lime-200/30 rounded-full shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-lime-300 inline-flex flex-col justify-start items-start">
-                        <div data-layer="Text" className="Text justify-center text-zinc-900 text-xs font-semibold font-['Space_Grotesk'] uppercase leading-4 tracking-wide">DELIVER.</div>
+                    <div data-layer="Overlay+Border+Shadow" className="OverlayBorderShadow size- px-2 py-2 sm:px-4 sm:py-2 4k:px-7 bg-lime-200/30 rounded-full shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-lime-300 inline-flex flex-col justify-start items-start">
+                        <div data-layer="Text" className="Text justify-center text-zinc-900 text-xs 4k:text-xl font-semibold font-['Space_Grotesk'] uppercase leading-4 tracking-wide">{t.hero.badgeDeliver}</div>
                     </div>
                 </div>
                 <div data-layer="Heading 1 - Headline" className="Heading1Headline self-stretch flex flex-col justify-start items-start">
-                    <div data-layer="Building reliable web products with tested precision." className="CraftingDigitalNarrativesWithEditorialPrecision self-stretch justify-center"><span className="text-zinc-900 text-5xl lg:text-6xl font-bold font-['Syne'] leading-[58px] lg:leading-[62px]">Building reliable web products with </span><span className="text-zinc-900 text-5xl lg:text-6xl font-bold font-['Syne'] underline leading-[58px] lg:leading-[62px]">tested precision.</span></div>
+                    <div data-layer="Building reliable web products with tested precision." className="CraftingDigitalNarrativesWithEditorialPrecision self-stretch justify-center"><span className="text-zinc-900 text-5xl lg:text-6xl 4k:text-8xl font-bold font-['Syne'] leading-[58px] lg:leading-[62px]">{t.hero.headlineLead}</span><span className="text-zinc-900 text-5xl lg:text-6xl 4k:text-8xl font-bold font-['Syne'] underline leading-[58px] lg:leading-[62px]">{t.hero.headlineAccent}</span></div>
                 </div>
-                <div data-layer="Short Bio" className="ShortBio w-full max-w-[681px] flex flex-col justify-start items-start">
-                    <div data-layer="I’m Nabilah Najwa Aysyah, a Software QA Engineer with a fullstack development background. I pair hands-on Next.js and Node.js experience with rigorous end-to-end testing to ship software that holds up in production." className="IMAlexVanceAMultidisciplinaryDesignerAndEngineerBridgingTheGapNeoBrutalistUtilityAndSoftOrganicFluidityBuildingTheNextOfWebExperiences self-stretch justify-center text-zinc-700 text-base font-medium font-['Space_Grotesk'] leading-6">I’m Nabilah Najwa Aysyah, a Software QA Engineer with a fullstack development background. I pair hands-on Next.js and Node.js experience with rigorous end-to-end testing to ship software that holds up in production.</div>
+                <div data-layer="Short Bio" className="ShortBio w-full md:max-w-[80%] flex flex-col justify-start items-start">
+                    <div className="self-stretch justify-center text-zinc-700 text-base 4k:text-2xl font-medium font-['Space_Grotesk'] leading-6">{t.hero.bio}</div>
                 </div>
-                <div data-layer="CTAs & Stats Bar" className="CtasStatsBar self-stretch inline-flex flex-col sm:flex-row justify-start items-start gap-3">
-                    <div data-layer="Link" className="Link w-auto cursor-pointer px-8 py-4 relative bg-black rounded-full flex justify-start items-center gap-3">
+                <div data-layer="CTAs & Stats Bar" className="CtasStatsBar self-stretch inline-flex flex-col sm:flex-row justify-start items-start gap-3 4k:gap-8">
+                    <a href="#quality-assurance" data-layer="Link" className="Link w-auto cursor-pointer px-8 py-4 relative bg-black rounded-full flex justify-start items-center gap-3">
                         {/* <div data-layer="Link:shadow" className="LinkShadow w-52 h-14 left-0 top-0 absolute bg-white/0 rounded-full shadow-[0px_2px_4px_-2px_rgba(0,0,0,0.10)] shadow-md" /> */}
                         <div data-layer="Container" className="Container size- inline-flex flex-col justify-start items-start">
-                            <div data-layer="Text" className="Text justify-center w-full text-white text-base font-normal font-['Space_Grotesk'] leading-6">View My Work</div>
+                            <div data-layer="Text" className="Text justify-center w-full text-white text-base 4k:text-2xl font-normal font-['Space_Grotesk'] leading-6">{t.hero.ctaPrimary}</div>
                         </div>
                         <div data-svg-wrapper data-layer="Container" className="Container">
                             <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1.05 9.75L0 8.7L7.2 1.5H0.75V0H9.75V9H8.25V2.55L1.05 9.75V9.75" fill="white"/>
                             </svg>
                         </div>
-                    </div>
-                    <div data-layer="Link" className="Link w-auto cursor-pointer size- px-8 py-4 rounded-full inline-flex flex-col justify-start items-start">
-                        <div data-layer="Text" className="Text justify-center text-zinc-900 text-base font-normal font-['Space_Grotesk'] leading-6">Contact Me</div>
-                    </div>
+                    </a>
+                    <a data-layer="Link" href="mailto:nabilahnajwa808@gmail.com" className="Link w-auto cursor-pointer size- px-8 py-4 rounded-full inline-flex flex-col justify-start items-start">
+                        <div data-layer="Text" className="Text justify-center text-zinc-900 text-base 4k:text-2xl font-normal font-['Space_Grotesk'] leading-6">{t.hero.ctaSecondary}</div>
+                    </a>
                 </div>
-                <div data-layer="Stats Micro-Pod" className="StatsMicroPod w-full inline-flex justify-start items-start gap-4">
-                    <div data-layer="Overlay+Border+Shadow" className="OverlayBorderShadow p-4 lg:min-w-36 bg-lime-300/30 rounded-2xl shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-lime-300 inline-flex flex-col justify-start items-start gap-1">
+                <div data-layer="Stats Micro-Pod" className="StatsMicroPod w-full inline-flex justify-start items-start gap-4 4k:gap-9">
+                    <div data-layer="Overlay+Border+Shadow" className="OverlayBorderShadow w-full self-stretch p-4 lg:min-w-36 4k:max-w-[256px] bg-lime-300/30 rounded-2xl shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-lime-300 inline-flex flex-col justify-start items-start gap-1 4k:gap-3">
                         <div data-layer="Container" className="Container self-stretch flex flex-col justify-start items-start">
-                            <div data-layer="3+" className="self-stretch justify-center text-zinc-900 text-3xl font-semibold font-['Syne'] leading-8">3+</div>
+                            <div data-layer="3+" className="self-stretch justify-center text-zinc-900 text-3xl 4k:text-5xl font-semibold font-['Syne'] leading-8">3+</div>
                         </div>
                         <div data-layer="Container" className="Container self-stretch flex flex-col justify-start items-start">
-                            <div data-layer="YEARS EXP." className="YearsExp self-stretch justify-center text-zinc-700 text-xs font-medium font-['Space_Grotesk'] uppercase leading-4 tracking-wide">YEARS EXPERIENCE</div>
-                        </div>
-                    </div>
-                    <div data-layer="Background+Border+Shadow" className="BackgroundBorderShadow p-4 lg:min-w-36 bg-blue-200 rounded-2xl shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-indigo-300 inline-flex flex-col justify-start items-start gap-1">
-                        <div data-layer="Container" className="Container self-stretch flex flex-col justify-start items-start">
-                            <div data-layer="50+" className="self-stretch justify-center text-zinc-900 text-3xl font-semibold font-['Syne'] leading-8">50+</div>
-                        </div>
-                        <div data-layer="Container" className="Container self-stretch flex flex-col justify-start items-start">
-                            <div data-layer="BUGS FOUND" className="Projects self-stretch justify-center text-zinc-700 text-xs font-medium font-['Space_Grotesk'] uppercase leading-4 tracking-wide">BUGS FOUND</div>
+                            <div data-layer="YEARS EXP." className="YearsExp self-stretch justify-center text-zinc-700 text-xs 4k:text-base font-medium font-['Space_Grotesk'] uppercase leading-4 tracking-wide">{t.hero.statYears}</div>
                         </div>
                     </div>
-                    <div data-layer="Background+Border+Shadow" className="BackgroundBorderShadow p-4 lg:min-w-36 bg-gray-200 rounded-2xl shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-black/10 inline-flex flex-col justify-start items-start gap-1">
+                    <div data-layer="Background+Border+Shadow" className="BackgroundBorderShadow w-full self-stretch p-4 lg:min-w-36 4k:max-w-[256px] bg-blue-200 rounded-2xl shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-indigo-300 inline-flex flex-col justify-between items-start gap-1 4k:gap-3">
                         <div data-layer="Container" className="Container self-stretch flex flex-col justify-start items-start">
-                            <div data-layer="95%" className="self-stretch justify-center text-zinc-900 text-3xl font-semibold font-['Syne'] leading-8">95%</div>
+                            <div data-layer="50+" className="self-stretch justify-center text-zinc-900 text-3xl 4k:text-5xl font-semibold font-['Syne'] leading-8">50+</div>
                         </div>
                         <div data-layer="Container" className="Container self-stretch flex flex-col justify-start items-start">
-                            <div data-layer="TEST EFFICIENCY" className="Satisfaction self-stretch justify-center text-zinc-700 text-xs font-medium font-['Space_Grotesk'] uppercase leading-4 tracking-wide">TEST EFFICIENCY</div>
+                            <div data-layer="BUGS FOUND" className="Projects self-stretch justify-center text-zinc-700 text-xs 4k:text-base font-medium font-['Space_Grotesk'] uppercase leading-4 tracking-wide">{t.hero.statBugs}</div>
+                        </div>
+                    </div>
+                    <div data-layer="Background+Border+Shadow" className="BackgroundBorderShadow w-full self-stretch p-4 lg:min-w-36 4k:max-w-[256px] bg-gray-200 rounded-2xl shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-black/10 inline-flex flex-col justify-start items-start gap-1 4k:gap-3">
+                        <div data-layer="Container" className="Container self-stretch flex flex-col justify-start items-start">
+                            <div data-layer="95%" className="self-stretch justify-center text-zinc-900 text-3xl 4k:text-5xl font-semibold font-['Syne'] leading-8">95%</div>
+                        </div>
+                        <div data-layer="Container" className="Container self-stretch flex flex-col justify-start items-start">
+                            <div data-layer="TEST EFFICIENCY" className="Satisfaction self-stretch justify-center text-zinc-700 text-xs 4k:text-base font-medium font-['Space_Grotesk'] uppercase leading-4 tracking-wide">{t.hero.statEfficiency}</div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="RightColumnOrganicFluidPortraitWithInteractive3dSculpture w-full lg:max-w-[400px] h-full flex justify-center items-start">
-                <div data-layer="Background+Border+Shadow" className="BackgroundBorderShadow flex-1 self-stretch p-7 relative bg-gradient-to-b from-sky-50/40 via-white to-emerald-50/40 rounded-[32px] shadow-[0px_20px_50px_0px_rgba(0,0,0,0.08)] outline outline-1 outline-offset-[-1px] outline-black/10 inline-flex flex-col justify-between items-center overflow-hidden min-w-0">
+            <div className="RightColumnOrganicFluidPortraitWithInteractive3dSculpture lg:flex-1 w-full lg:max-w-[400px] 4k:min-w-[35%] self-stretch relative flex justify-center items-start">
+                <div data-layer="Background+Border+Shadow" className="BackgroundBorderShadow flex-1 self-stretch p-7 4k:p-10 relative bg-gradient-to-b from-sky-50/40 via-white to-emerald-50/40 rounded-[32px] shadow-[0px_20px_50px_0px_rgba(0,0,0,0.08)] outline outline-1 outline-offset-[-1px] outline-black/10 inline-flex flex-col justify-between items-center overflow-hidden min-w-0">
                     <div data-layer="Overlay+Blur" className="OverlayBlur size-64 left-[257px] top-[-63px] absolute bg-blue-100/25 rounded-full blur-[32px]" />
                     <div data-layer="Overlay+Blur" className="OverlayBlur size-64 left-[-63px] top-[404.50px] absolute bg-lime-300/20 rounded-full blur-[32px]" />
                     <div data-layer="Top Header Overlay Badges" className="TopHeaderOverlayBadges self-stretch px-3 py-3 bg-stone-50/90 rounded-2xl shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-black/10 backdrop-blur-[6px] sm:inline-flex flex flex-col justify-center items-start gap-1">
@@ -95,43 +103,49 @@ export default function Hero() {
                                 </svg>
                             </div>
                             <div data-layer="Container" className="Container size- inline-flex flex-col justify-start items-start">
-                                <div data-layer="3D INTERACTIVE SCULPTURE" className="DInteractiveSculpture justify-center text-slate-600 text-xs font-semibold font-['Space_Grotesk'] uppercase leading-4 tracking-wide">3D INTERACTIVE SCULPTURE</div>
+                                <div data-layer="3D INTERACTIVE SCULPTURE" className="DInteractiveSculpture justify-center text-slate-600 text-xs 4k:text-base font-semibold font-['Space_Grotesk'] uppercase leading-4 tracking-wide">{t.hero.sculptureTitle}</div>
                             </div>
                         </div>
                         <div data-layer="Container" className="Container size- flex justify-start items-center gap-1.5">
+                            {/* Disabled: not supported by the CV. */}
+                            {/*
                             <div data-layer="Background+Border" className="BackgroundBorder size- px-2 py-0.5 bg-blue-200 rounded-full outline outline-1 outline-offset-[-1px] outline-indigo-300 inline-flex flex-col justify-start items-start">
                                 <div data-layer="Text" className="Text justify-center text-slate-600 text-[10px] font-semibold font-['Space_Grotesk'] leading-4">Kinetic WebGL</div>
                             </div>
+                            */}
+                            {/* Disabled: not supported by the CV. */}
+                            {/*
                             <div data-layer="Overlay+Border" className="OverlayBorder size- px-2 py-0.5 bg-lime-300/30 rounded-full outline outline-1 outline-offset-[-1px] outline-lime-300 inline-flex flex-col justify-start items-start">
                                 <div data-layer="Text" className="Text justify-center text-zinc-900 text-[10px] font-semibold font-['Space_Grotesk'] leading-4">Three.js Mesh</div>
                             </div>
+                            */}
                         </div>
                     </div>
                     <div data-layer="Center 3D Interactive Animation Container:margin" className="Center3dInteractiveAnimationContainerMargin self-stretch flex-1 min-h-0 flex flex-col justify-center items-stretch min-w-0">
                         <div data-layer="Center 3D Interactive Animation Container" className="Center3dInteractiveAnimationContainer self-stretch flex-1 min-h-0 rounded-2xl flex justify-center items-center overflow-hidden min-w-0">
-                            <div data-layer="STITCH_THREEJS_START:ANIMATION_10" className="StitchThreejsStartAnimation10ClassWFullHFullMinH500pxBgTransparentRounded32pxO w-full h-full min-h-[320px] bg-transparent rounded-[32px] flex flex-col justify-center items-start overflow-hidden">
+                            <div data-layer="STITCH_THREEJS_START:ANIMATION_10" className="StitchThreejsStartAnimation10ClassWFullHFullMinH500pxBgTransparentRounded32pxO w-full h-full min-h-0 bg-transparent rounded-[32px] flex flex-col justify-center items-start overflow-hidden">
                                 <HeroAnimation className="w-full h-full" />
                             </div>
                         </div>
                     </div>
-                    <div data-layer="Bottom Overlay Controls & Metadata" className="BottomOverlayControlsMetadata self-stretch flex flex-col justify-start items-start gap-2">
-                        <div data-layer="Overlay+Border+Shadow+OverlayBlur" className="OverlayBorderShadowOverlayblur self-stretch p-3 bg-stone-50/90 rounded-2xl shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-black/10 backdrop-blur-[6px] inline-flex justify-between items-center flex-wrap">
-                            <div data-layer="Container" className="Container size- inline-flex flex-col justify-start items-start">
+                    <div data-layer="Bottom Overlay Controls & Metadata" className="BottomOverlayControlsMetadata self-stretch flex flex-col justify-start items-start gap-2 4k:gap-4">
+                        <div data-layer="Overlay+Border+Shadow+OverlayBlur" className="OverlayBorderShadowOverlayblur self-stretch p-3 4k:p-6 bg-stone-50/90 rounded-2xl shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-black/10 backdrop-blur-[6px] inline-flex justify-between items-center flex-wrap">
+                            <div data-layer="Container" className="Container size- inline-flex flex-col justify-start items-start 4k:gap-2">
                                 <div data-layer="Container" className="Container self-stretch flex flex-col justify-start items-start">
-                                    <div data-layer="Text" className="Text justify-center text-zinc-700 text-[10px] font-semibold font-['Space_Grotesk'] uppercase leading-4 tracking-wide">RENDERER MODE</div>
+                                    <div data-layer="Text" className="Text justify-center text-zinc-700 text-[10px] 4k:text-sm font-semibold font-['Space_Grotesk'] uppercase leading-4 tracking-wide">{t.hero.rendererMode}</div>
                                 </div>
-                                <div data-layer="Container" className="Container self-stretch inline-flex justify-start items-center gap-1.5">
+                                <div data-layer="Container" className="Container self-stretch inline-flex justify-start items-center gap-1.5 4k:gap-3">
                                     <div data-layer="Container" className="Container size- inline-flex flex-col justify-start items-start">
-                                        <div data-layer="Text" className="Text justify-center text-zinc-900 text-xl font-bold font-['Syne'] leading-6">60 FPS</div>
+                                        <div data-layer="Text" className="Text justify-center text-zinc-900 text-xl 4k:text-2xl font-bold font-['Syne'] leading-6">60 FPS</div>
                                     </div>
                                     <div data-layer="Background" className="Background size- px-1.5 py-0.5 bg-emerald-100 rounded-full inline-flex flex-col justify-start items-start">
-                                        <div data-layer="Text" className="Text justify-center text-emerald-800 text-[10px] font-semibold font-['Space_Grotesk'] leading-4">Synced</div>
+                                        <div data-layer="Text" className="Text justify-center text-emerald-800 text-[10px] 4k:text-sm font-semibold font-['Space_Grotesk'] leading-4">{t.hero.synced}</div>
                                     </div>
                                 </div>
                             </div>
-                            <div data-layer="Container" className="Container size- flex justify-start items-center gap-2">
+                            <div data-layer="Container" className="Container size- flex justify-start items-center gap-2 4k:gap-4">
                                 <div data-layer="Background+Border" className="BackgroundBorder size- px-2 py-1 bg-gray-200 rounded-full outline outline-1 outline-offset-[-1px] outline-black/10 inline-flex flex-col justify-start items-start">
-                                    <div data-layer="Text" className="Text justify-center text-zinc-900 text-[10px] font-medium font-['Space_Grotesk'] leading-4">Drag &amp; Hover to Orbit</div>
+                                    <div data-layer="Text" className="Text justify-center text-zinc-900 text-[10px] 4k:text-sm font-medium font-['Space_Grotesk'] leading-4">{t.hero.orbitHint}</div>
                                 </div>
                                 <div data-layer="Background+Shadow" className="BackgroundShadow size-8 bg-black rounded-full shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] flex justify-center items-center">
                                     <div data-svg-wrapper data-layer="Container" className="Container">
@@ -142,7 +156,7 @@ export default function Hero() {
                                 </div>
                             </div>
                         </div>
-                        <div data-layer="Container" className="Container self-stretch px-2 pt-1 inline-flex justify-between items-center flex-wrap">
+                        <div data-layer="Container" className="Container self-stretch px-2 pt-1 inline-flex justify-between items-center flex-wrap gap-2">
                             <div data-layer="Container" className="Container size- flex justify-start items-center gap-1.5">
                                 <div data-svg-wrapper data-layer="Background" className="Background">
                                     <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -150,11 +164,11 @@ export default function Hero() {
                                     </svg>
                                 </div>
                                 <div data-layer="Container" className="Container size- inline-flex flex-col justify-start items-start">
-                                    <div data-layer="Text" className="Text justify-center text-zinc-700 text-xs font-medium font-['Space_Grotesk'] leading-4">Available for QA &amp; Dev roles</div>
+                                    <div data-layer="Text" className="Text justify-center text-zinc-700 text-xs 4k:text-base font-medium font-['Space_Grotesk'] leading-4">{t.hero.availability}</div>
                                 </div>
                             </div>
                             <div data-layer="Container" className="Container size- inline-flex flex-col justify-start items-start">
-                                <div data-layer="Text" className="Text justify-center text-slate-600 text-xs font-semibold font-['Space_Grotesk'] leading-4">Bandung, West Java</div>
+                                <div data-layer="Text" className="Text justify-center text-slate-600 text-xs 4k:text-base font-semibold font-['Space_Grotesk'] leading-4">{t.hero.location}</div>
                             </div>
                         </div>
                     </div>
@@ -165,6 +179,8 @@ export default function Hero() {
   );
 }
 
+// Disabled: renders the unused stats placeholder above.
+/*
 function StatCards() {
   return stats.map(([value, label, color]) => (
     <div
@@ -180,3 +196,4 @@ function StatCards() {
     </div>
   ));
 }
+*/

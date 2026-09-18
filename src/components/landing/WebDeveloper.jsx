@@ -1,4 +1,10 @@
+'use client';
+
+import { useI18n } from '@/i18n/LanguageProvider';
+
 export default function WebDeveloper() {
+  const { t } = useI18n();
+
   return (
     <section
       id="development"
@@ -51,9 +57,7 @@ export default function WebDeveloper() {
                 <div
                   data-layer="Text"
                   className="Text justify-center text-zinc-900 text-xs font-semibold font-['Space_Grotesk'] uppercase leading-4 tracking-wide"
-                >
-                  WEB DEVELOPMENT &amp; FULLSTACK // 02
-                </div>
+                >{t.webdev.eyebrow}</div>
               </div>
             </div>
             <div
@@ -63,9 +67,7 @@ export default function WebDeveloper() {
               <div
                 data-layer="Text"
                 className="Text w-fit justify-center text-zinc-900 text-4xl lg:text-5xl font-semibold font-['Syne'] leading-[50px]"
-              >
-                Fullstack Delivery with Next.js &amp;
-              </div>
+              >{t.webdev.headline1}</div>
               <div data-layer="Background+Border+Shadow" className="node-border inline-flex items-center" >
                 <div data-svg-wrapper data-layer="svg" className="svg">
                   <svg
@@ -79,12 +81,8 @@ export default function WebDeveloper() {
                   </svg>
                 </div>
                 <div className="w-fit flex flex-col gap-2 lg:flex-row">
-                  <div data-layer="Text" className="node-text w-fit justify-center text-zinc-900 text-4xl lg:text-5xl font-semibold font-['Syne']">
-                    Node.js in
-                  </div>
-                  <div data-layer="Text" className="production-text w-fit justify-center text-zinc-900 text-4xl lg:text-5xl font-semibold font-['Syne']">
-                    Production
-                  </div>
+                  <div data-layer="Text" className="node-text w-fit justify-center text-zinc-900 text-4xl lg:text-5xl font-semibold font-['Syne']">{t.webdev.headline2}</div>
+                  <div data-layer="Text" className="production-text w-fit justify-center text-zinc-900 text-4xl lg:text-5xl font-semibold font-['Syne']">{t.webdev.headline3}</div>
                 </div>
               </div>
             </div>
@@ -116,9 +114,7 @@ export default function WebDeveloper() {
                 <div
                   data-layer="Text"
                   className="Text justify-center text-zinc-900 text-xs font-medium font-['Space_Grotesk'] leading-4"
-                >
-                  90% Faster Page Load
-                </div>
+                >{t.webdev.badge1}</div>
               </div>
             </div>
             <div data-layer="Overlay+Border+Shadow" className="OverlayBorderShadow size- px-2 py-1 bg-lime-300/30 rounded-full shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-lime-300 inline-flex justify-start items-center gap-2">
@@ -144,9 +140,7 @@ export default function WebDeveloper() {
                 <div
                   data-layer="Text"
                   className="Text justify-center text-zinc-900 text-xs font-semibold font-['Space_Grotesk'] leading-4"
-                >
-                  Improved SEO Rankings
-                </div>
+                >{t.webdev.badge2}</div>
               </div>
             </div>
           </div>
@@ -187,9 +181,7 @@ export default function WebDeveloper() {
                   <div
                     data-layer="Text"
                     className="Text justify-center text-zinc-700 text-xs font-semibold font-['Space_Grotesk'] uppercase leading-4 tracking-wide"
-                  >
-                    PROJECT: COMPANY PROFILE MIGRATION
-                  </div>
+                  >{t.webdev.projectEyebrow}</div>
                 </div>
               </div>
               <div data-layer="Container" className="Container inline-flex justify-start items-start gap-3 lg:gap-1.5">
@@ -212,25 +204,19 @@ export default function WebDeveloper() {
                   <div
                     data-layer="Text"
                     className="Text justify-center text-emerald-950 text-xs font-semibold font-['Space_Grotesk'] leading-4"
-                  >
-                    90% Faster
-                  </div>
+                  >{t.webdev.projectMetricValue}</div>
                 </div>
                 <div data-layer="Overlay+Border" className="OverlayBorder size- px-2 py-0.5 bg-blue-100/30 rounded-full outline outline-1 outline-offset-[-1px] outline-indigo-300 inline-flex flex-col justify-start items-start">
                   <div
                     data-layer="Text"
                     className="Text justify-center text-slate-600 text-xs font-semibold font-['Space_Grotesk'] leading-4"
-                  >
-                    Page Load
-                  </div>
+                  >{t.webdev.projectMetricLabel}</div>
                 </div>
                 <div data-layer="Background+Border" className="BackgroundBorder size- px-2 py-0.5 bg-gray-200 rounded-full outline outline-1 outline-offset-[-1px] outline-black/10  inline-flex flex-col justify-start items-start">
                   <div
                     data-layer="Text"
                     className="Text justify-center text-zinc-700 text-xs font-normal font-['Space_Grotesk'] leading-4"
-                  >
-                    React to Next.js
-                  </div>
+                  >{t.webdev.projectSubtitle}</div>
                 </div>
               </div>
             </div>
@@ -243,8 +229,7 @@ export default function WebDeveloper() {
                 className="InteractiveCanvasCodeEditorSimulator self-stretch flex flex-col justify-start items-start gap-5"
               >
                 <div
-                  data-layer="Background+Border+Shadow"
-                  className="BackgroundBorderShadow self-stretch p-4 relative bg-stone-900 rounded-2xl max-lg:overflow-x-auto shadow-[inset_0px_2px_4px_1px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-black/20 flex flex-col justify-start items-start gap-2 overflow-hidden"
+                  className="workspace-container self-stretch p-4 relative bg-stone-900 rounded-2xl max-lg:overflow-x-auto shadow-[inset_0px_2px_4px_1px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-black/20 flex flex-col justify-start items-start gap-2 overflow-auto"
                 >
                   <div
                     data-layer="HorizontalBorder"
@@ -260,7 +245,7 @@ export default function WebDeveloper() {
                       >
                         <div
                           data-layer="Text"
-                          className="Text justify-center text-blue-400 text-xs font-normal font-['Liberation_Mono'] leading-4"
+                          className="Text justify-center text-blue-400 text-xs font-normal font-mono leading-4"
                         >
                           page.jsx
                         </div>
@@ -271,7 +256,7 @@ export default function WebDeveloper() {
                       >
                         <div
                           data-layer="Text"
-                          className="Text justify-center text-white/40 text-xs font-normal font-['Liberation_Mono'] leading-4"
+                          className="Text justify-center text-white/40 text-xs font-normal font-mono leading-4"
                         >
                           routes.js
                         </div>
@@ -282,7 +267,7 @@ export default function WebDeveloper() {
                       >
                         <div
                           data-layer="Text"
-                          className="Text justify-center text-white/40 text-xs font-normal font-['Liberation_Mono'] leading-4"
+                          className="Text justify-center text-white/40 text-xs font-normal font-mono leading-4"
                         >
                           schema.sql
                         </div>
@@ -294,7 +279,7 @@ export default function WebDeveloper() {
                     >
                       <div
                         data-layer="Text"
-                        className="Text justify-center text-white/40 text-xs font-normal font-['Liberation_Mono'] leading-4"
+                        className="Text justify-center text-white/40 text-xs font-normal font-mono leading-4"
                       >
                         JavaScript ES6+
                       </div>
@@ -302,52 +287,52 @@ export default function WebDeveloper() {
                   </div>
                   <div
                     data-layer="Pre"
-                    className="Pre self-stretch pt-0.5 pb-1 flex flex-col justify-start items-start overflow-hidden"
+                    className="Pre self-stretch pt-0.5 pb-1 flex flex-col justify-start items-start overflow-auto"
                   >
                     <div data-layer="Code" className="Code w-96 h-36 relative">
                       <div
                         data-layer="Text"
                         className="Text left-0 top-[-3px] absolute justify-center"
                       >
-                        <span className="text-red-400 text-xs font-normal font-['Liberation_Mono'] leading-4">
+                        <span className="text-red-400 text-xs font-normal font-mono leading-4">
                           import
                         </span>
-                        <span className="text-white/90 text-xs font-normal font-['Liberation_Mono'] leading-4">
+                        <span className="text-white/90 text-xs font-normal font-mono leading-4">
                           {" "}
                           &#123;{" "}
                         </span>
-                        <span className="text-sky-300 text-xs font-normal font-['Liberation_Mono'] leading-4">
-                          WebGLRenderer
+                        <span className="text-sky-300 text-xs font-normal font-mono leading-4">
+                          Pool
                         </span>
-                        <span className="text-white/90 text-xs font-normal font-['Liberation_Mono'] leading-4">
+                        <span className="text-white/90 text-xs font-normal font-mono leading-4">
                           ,{" "}
                         </span>
-                        <span className="text-sky-300 text-xs font-normal font-['Liberation_Mono'] leading-4">
-                          ShaderMaterial
+                        <span className="text-sky-300 text-xs font-normal font-mono leading-4">
+                          QueryResult
                         </span>
-                        <span className="text-white/90 text-xs font-normal font-['Liberation_Mono'] leading-4">
+                        <span className="text-white/90 text-xs font-normal font-mono leading-4">
                           ,{" "}
                         </span>
-                        <span className="text-sky-300 text-xs font-normal font-['Liberation_Mono'] leading-4">
-                          Vector2
+                        <span className="text-sky-300 text-xs font-normal font-mono leading-4">
+                          PoolClient
                         </span>
-                        <span className="text-white/90 text-xs font-normal font-['Liberation_Mono'] leading-4">
+                        <span className="text-white/90 text-xs font-normal font-mono leading-4">
                           {" "}
                           &#125;{" "}
                         </span>
-                        <span className="text-red-400 text-xs font-normal font-['Liberation_Mono'] leading-4">
+                        <span className="text-red-400 text-xs font-normal font-mono leading-4">
                           from
                         </span>
-                        <span className="text-white/90 text-xs font-normal font-['Liberation_Mono'] leading-4">
+                        <span className="text-white/90 text-xs font-normal font-mono leading-4">
                           {" "}
                         </span>
-                        <span className="text-blue-300 text-xs font-normal font-['Liberation_Mono'] leading-4">
-                          &apos;three&apos;
+                        <span className="text-blue-300 text-xs font-normal font-mono leading-4">
+                          &apos;pg&apos;
                         </span>
                       </div>
                       <div
                         data-layer="Text"
-                        className="Text left-[409.34px] top-[-21px] absolute justify-center text-white/90 text-xs font-normal font-['Liberation_Mono'] leading-4"
+                        className="Text left-[409.34px] top-[-21px] absolute justify-center text-white/90 text-xs font-normal font-mono leading-4"
                       >
                         ;<br />
                         <br />
@@ -356,98 +341,98 @@ export default function WebDeveloper() {
                         data-layer="Text"
                         className="Text left-0 top-[32.43px] absolute justify-center"
                       >
-                        <span className="text-zinc-400 text-xs font-normal font-['Liberation_Mono'] leading-4">
+                        <span className="text-zinc-400 text-xs font-normal font-mono leading-4">
                           {
-                            "// Reactive uniform matrix updated via RAF loop (pointer tracking)"
+                            "// Verified against the regression suite before each release"
                           }
                           <br />
                         </span>
-                        <span className="text-red-400 text-xs font-normal font-['Liberation_Mono'] leading-4">
+                        <span className="text-red-400 text-xs font-normal font-mono leading-4">
                           const
                         </span>
-                        <span className="text-white/90 text-xs font-normal font-['Liberation_Mono'] leading-4">
+                        <span className="text-white/90 text-xs font-normal font-mono leading-4">
                           {" "}
                         </span>
-                        <span className="text-purple-300 text-xs font-normal font-['Liberation_Mono'] leading-4">
-                          useInteractiveGL
+                        <span className="text-purple-300 text-xs font-normal font-mono leading-4">
+                          getOrdersByStatus
                         </span>
-                        <span className="text-white/90 text-xs font-normal font-['Liberation_Mono'] leading-4">
+                        <span className="text-white/90 text-xs font-normal font-mono leading-4">
                           {" "}
-                          = (container:{" "}
+                          = (status:{" "}
                         </span>
-                        <span className="text-sky-300 text-xs font-normal font-['Liberation_Mono'] leading-4">
-                          HTMLCanvasElement
+                        <span className="text-sky-300 text-xs font-normal font-mono leading-4">
+                          OrderStatus
                         </span>
-                        <span className="text-white/90 text-xs font-normal font-['Liberation_Mono'] leading-4">
+                        <span className="text-white/90 text-xs font-normal font-mono leading-4">
                           ) =&gt; &#123;
                         </span>
-                        <span className="text-zinc-400 text-xs font-normal font-['Liberation_Mono'] leading-4">
+                        <span className="text-zinc-400 text-xs font-normal font-mono leading-4">
                           <br />
                         </span>
-                        <span className="text-white/90 text-xs font-normal font-['Liberation_Mono'] leading-4">
+                        <span className="text-white/90 text-xs font-normal font-mono leading-4">
                           {" "}
                         </span>
-                        <span className="text-red-400 text-xs font-normal font-['Liberation_Mono'] leading-4">
+                        <span className="text-red-400 text-xs font-normal font-mono leading-4">
                           const
                         </span>
-                        <span className="text-white/90 text-xs font-normal font-['Liberation_Mono'] leading-4">
+                        <span className="text-white/90 text-xs font-normal font-mono leading-4">
                           {" "}
-                          uMouse ={" "}
+                          client ={" "}
                         </span>
-                        <span className="text-red-400 text-xs font-normal font-['Liberation_Mono'] leading-4">
-                          new
+                        <span className="text-red-400 text-xs font-normal font-mono leading-4">
+                          await
                         </span>
-                        <span className="text-white/90 text-xs font-normal font-['Liberation_Mono'] leading-4">
+                        <span className="text-white/90 text-xs font-normal font-mono leading-4">
                           {" "}
                         </span>
-                        <span className="text-sky-300 text-xs font-normal font-['Liberation_Mono'] leading-4">
-                          Vector2
+                        <span className="text-sky-300 text-xs font-normal font-mono leading-4">
+                          pool.connect
                         </span>
-                        <span className="text-white/90 text-xs font-normal font-['Liberation_Mono'] leading-4">
-                          (0.5, 0.5);
+                        <span className="text-white/90 text-xs font-normal font-mono leading-4">
+                          ();
                         </span>
-                        <span className="text-zinc-400 text-xs font-normal font-['Liberation_Mono'] leading-4">
+                        <span className="text-zinc-400 text-xs font-normal font-mono leading-4">
                           <br />
                         </span>
-                        <span className="text-white/90 text-xs font-normal font-['Liberation_Mono'] leading-4">
+                        <span className="text-white/90 text-xs font-normal font-mono leading-4">
                           {" "}
                         </span>
-                        <span className="text-purple-300 text-xs font-normal font-['Liberation_Mono'] leading-4">
-                          renderer
+                        <span className="text-purple-300 text-xs font-normal font-mono leading-4">
+                          client
                         </span>
-                        <span className="text-white/90 text-xs font-normal font-['Liberation_Mono'] leading-4">
-                          .setPixelRatio(Math.min(window.devicePixelRatio, 2));
+                        <span className="text-white/90 text-xs font-normal font-mono leading-4">
+                          .query(&apos;SELECT id, total FROM orders WHERE status = $1&apos;);
                         </span>
-                        <span className="text-zinc-400 text-xs font-normal font-['Liberation_Mono'] leading-4">
+                        <span className="text-zinc-400 text-xs font-normal font-mono leading-4">
                           <br />
                         </span>
-                        <span className="text-white/90 text-xs font-normal font-['Liberation_Mono'] leading-4">
+                        <span className="text-white/90 text-xs font-normal font-mono leading-4">
                           {" "}
                         </span>
-                        <span className="text-red-400 text-xs font-normal font-['Liberation_Mono'] leading-4">
+                        <span className="text-red-400 text-xs font-normal font-mono leading-4">
                           return
                         </span>
-                        <span className="text-white/90 text-xs font-normal font-['Liberation_Mono'] leading-4">
+                        <span className="text-white/90 text-xs font-normal font-mono leading-4">
                           {" "}
-                          &#123; fps:{" "}
+                          &#123; rows:{" "}
                         </span>
-                        <span className="text-sky-300 text-xs font-normal font-['Liberation_Mono'] leading-4">
-                          60
+                        <span className="text-sky-300 text-xs font-normal font-mono leading-4">
+                          24
                         </span>
-                        <span className="text-white/90 text-xs font-normal font-['Liberation_Mono'] leading-4">
-                          , compileTime: &apos;1.4ms&apos;, state:{" "}
+                        <span className="text-white/90 text-xs font-normal font-mono leading-4">
+                          , tookMs: &apos;1.4ms&apos;, state:{" "}
                         </span>
-                        <span className="text-green-300 text-xs font-normal font-['Liberation_Mono'] leading-4">
-                          &apos;STREAMING&apos;
+                        <span className="text-green-300 text-xs font-normal font-mono leading-4">
+                          &apos;VERIFIED&apos;
                         </span>
-                        <span className="text-white/90 text-xs font-normal font-['Liberation_Mono'] leading-4">
+                        <span className="text-white/90 text-xs font-normal font-mono leading-4">
                           {" "}
                           &#125;;
                         </span>
-                        <span className="text-zinc-400 text-xs font-normal font-['Liberation_Mono'] leading-4">
+                        <span className="text-zinc-400 text-xs font-normal font-mono leading-4">
                           <br />
                         </span>
-                        <span className="text-white/90 text-xs font-normal font-['Liberation_Mono'] leading-4">
+                        <span className="text-white/90 text-xs font-normal font-mono leading-4">
                           &#125;;
                         </span>
                       </div>
@@ -459,24 +444,24 @@ export default function WebDeveloper() {
                   >
                     <div
                       data-layer="Text"
-                      className="Text justify-center text-white text-6xl font-bold font-['Liberation_Mono'] leading-[90px]"
+                      className="Text justify-center text-white text-6xl font-bold font-mono leading-[90px]"
                     >
-                      GL
+                      SQL
                     </div>
                   </div>
                 </div>
                 <div data-layer="Container" className="Container self-stretch inline-flex justify-center items-start gap-2">
                     <div data-layer="Background+Border" className="BackgroundBorder md:h-fit lg:rounded-full flex-1 self-stretch lg:px-5 p-2 bg-stone-100 rounded-xl outline outline-1 outline-offset-[-1px] outline-black/10 inline-flex flex-col justify-start items-start">
                         <div data-layer="BUNDLE size" className="BundleSize self-stretch justify-center text-zinc-700 text-[10px] font-semibold font-['Space_Grotesk'] uppercase leading-4">BUNDLE size</div>
-                        <div data-layer="Optimized" className="Optimized justify-center text-zinc-900 text-sm font-semibold font-['Space_Grotesk'] leading-5">Optimized</div>
+                        <div data-layer="Optimized" className="Optimized justify-center text-zinc-900 text-sm font-semibold font-['Space_Grotesk'] leading-5">{t.webdev.optimized}</div>
                     </div>
                     <div data-layer="Background+Border" className="BackgroundBorder md:h-fit lg:rounded-full flex-1 self-stretch lg:px-5 p-2 bg-stone-100 rounded-xl outline outline-1 outline-offset-[-1px] outline-black/10 inline-flex flex-col justify-start items-start">
                         <div data-layer="Rendering" className="Rendering self-stretch justify-center text-zinc-700 text-[10px] font-semibold font-['Space_Grotesk'] uppercase leading-4">Rendering</div>
                         <div data-layer="SSR + SSG" className="SsrSsg justify-center text-emerald-900 text-sm font-semibold font-['Space_Grotesk'] leading-5">SSR + SSG</div>
                     </div>
                     <div data-layer="Background+Border" className="BackgroundBorder md:h-fit lg:rounded-full flex-1 self-stretch lg:px-5 p-2 bg-stone-100 rounded-xl outline outline-1 outline-offset-[-1px] outline-black/10 inline-flex flex-col justify-start items-start">
-                        <div data-layer="ANIMATION" className="Animation self-stretch justify-center text-zinc-700 text-[10px] font-semibold font-['Space_Grotesk'] uppercase leading-4">ANIMATION</div>
-                        <div data-layer="GPU Synced" className="GpuSynced justify-center text-slate-600 text-sm font-semibold font-['Space_Grotesk'] leading-5">GPU Synced</div>
+                        <div data-layer="ANIMATION" className="Animation self-stretch justify-center text-zinc-700 text-[10px] font-semibold font-['Space_Grotesk'] uppercase leading-4">{t.webdev.animationLabel}</div>
+                        <div data-layer="GPU Synced" className="GpuSynced justify-center text-slate-600 text-sm font-semibold font-['Space_Grotesk'] leading-5">{t.webdev.gpuSynced}</div>
                     </div>
                 </div>
               </div>
@@ -492,9 +477,7 @@ export default function WebDeveloper() {
                 <div
                   data-layer="Text"
                   className="Text justify-center text-zinc-700 text-xs font-medium font-['Space_Grotesk'] leading-4"
-                >
-                  Interactive Canvas Built with Three.js
-                </div>
+                >{t.webdev.canvasTitle}</div>
               </div>
               <div
                 data-layer="Link"
@@ -507,9 +490,7 @@ export default function WebDeveloper() {
                   <div
                     data-layer="Text"
                     className="Text justify-center text-zinc-900 text-sm font-semibold font-['Space_Grotesk'] leading-5"
-                  >
-                    Inspect Live Demos
-                  </div>
+                  >{t.webdev.canvasCta}</div>
                 </div>
                 <div
                   data-svg-wrapper
@@ -542,9 +523,7 @@ export default function WebDeveloper() {
             />
             <div data-layer="Container" className="Container self-stretch inline-flex justify-between items-center flex-wrap" >
               <div data-layer="Background+Border+Shadow" className="BackgroundBorderShadow size- px-4 py-2 bg-stone-50 rounded-full shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-black/10  inline-flex flex-col justify-start items-start" >
-                <div data-layer="Text" className="Text justify-center text-zinc-900 text-xs font-semibold font-['Space_Grotesk'] uppercase leading-4 tracking-wide" >
-                  DATA LAYER
-                </div>
+                <div data-layer="Text" className="Text justify-center text-zinc-900 text-xs font-semibold font-['Space_Grotesk'] uppercase leading-4 tracking-wide" >{t.webdev.dataEyebrow}</div>
               </div>
               <div data-layer="Background+Border+Shadow" className="BackgroundBorderShadow size- px-2 py-1 bg-stone-50 rounded-full shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-black/10 flex justify-start items-center gap-1" >
                 <div data-svg-wrapper data-layer="Background" className="Background">
@@ -583,9 +562,7 @@ export default function WebDeveloper() {
                   <div
                     data-layer="Deterministic State & UI Mesh"
                     className="DeterministicStateUiMesh self-stretch justify-center text-zinc-900 text-xl font-semibold font-['Space_Grotesk'] leading-6"
-                  >
-                    Structured APIs &amp; Database Design
-                  </div>
+                  >{t.webdev.dataTitle}</div>
                 </div>
                 <div
                   data-layer="Container"
@@ -594,9 +571,7 @@ export default function WebDeveloper() {
                   <div
                     data-layer="RESTful endpoints connecting responsive front-end components with a PostgreSQL data layer."
                     className="ReactiveDependencyGraphConnectingPresentationComponentsWithPersistentAsynchronousStores self-stretch justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5"
-                  >
-                    RESTful endpoints connecting responsive front-end components with a PostgreSQL data layer.
-                  </div>
+                  >{t.webdev.dataBody}</div>
                 </div>
                 <div
                   data-layer="Reactive Node Graph Visualization"
@@ -640,9 +615,7 @@ export default function WebDeveloper() {
                       <div
                         data-layer="Text"
                         className="Text justify-center text-zinc-900 text-xs font-semibold font-['Space_Grotesk'] leading-4"
-                      >
-                        API Layer
-                      </div>
+                      >{t.webdev.apiLayer}</div>
                     </div>
                     <div
                       data-layer="Margin"
@@ -680,9 +653,7 @@ export default function WebDeveloper() {
                       <div
                         data-layer="Text"
                         className="Text justify-center text-zinc-900 text-xs font-semibold font-['Space_Grotesk'] leading-4"
-                      >
-                        Database
-                      </div>
+                      >{t.webdev.database}</div>
                     </div>
                   </div>
                   <div
@@ -696,9 +667,7 @@ export default function WebDeveloper() {
                       <div
                         data-layer="Text"
                         className="Text justify-center text-zinc-700 text-xs font-medium font-['Space_Grotesk'] leading-4"
-                      >
-                        Query Handling:
-                      </div>
+                      >{t.webdev.queryHandling}</div>
                     </div>
                     <div
                       data-layer="Background"
@@ -707,9 +676,7 @@ export default function WebDeveloper() {
                       <div
                         data-layer="Text"
                         className="Text justify-center text-emerald-950 text-xs font-semibold font-['Space_Grotesk'] leading-4"
-                      >
-                        Verified with SQL
-                      </div>
+                      >{t.webdev.verifiedSql}</div>
                     </div>
                   </div>
                 </div>
@@ -726,9 +693,7 @@ export default function WebDeveloper() {
                 <div
                   data-layer="Text"
                   className="Text justify-center text-zinc-700 text-xs font-medium font-['Space_Grotesk'] leading-4"
-                >
-                  Modular Components
-                </div>
+                >{t.webdev.modularTitle}</div>
               </div>
               <div
                 data-layer="Container"
@@ -737,9 +702,7 @@ export default function WebDeveloper() {
                 <div
                   data-layer="Text"
                   className="Text justify-center text-slate-600 text-xs font-semibold font-['Space_Grotesk'] leading-4"
-                >
-                  Reusable by Design
-                </div>
+                >{t.webdev.modularBody}</div>
               </div>
             </div>
           </div>
@@ -762,9 +725,7 @@ export default function WebDeveloper() {
                 <div
                   data-layer="Text"
                   className="Text justify-center text-zinc-900 text-xs font-semibold font-['Space_Grotesk'] uppercase leading-4 tracking-wide"
-                >
-                  MIGRATION IMPACT
-                </div>
+                >{t.webdev.impactEyebrow}</div>
               </div>
               <div
                 data-layer="Background+Border+Shadow"
@@ -809,24 +770,20 @@ export default function WebDeveloper() {
                     <div
                       data-layer="Text"
                       className="Text justify-center text-zinc-700 text-xl font-semibold font-['Space_Grotesk'] leading-6"
-                    >
-                      faster
-                    </div>
+                    >{t.webdev.impactFaster}</div>
                   </div>
                   <div data-layer="Background+Border+Shadow" className="BackgroundBorderShadow size- px-3 py-1 bg-stone-50 rounded-full shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-lime-300 inline-flex flex-col justify-start items-start">
                     <div
                       data-layer="Text"
                       className="Text justify-center text-emerald-900 text-xs font-bold font-['Space_Grotesk'] leading-4"
-                    >
-                      Page Load Speed
-                    </div>
+                    >{t.webdev.impactLoadLabel}</div>
                   </div>
                 </div>
                 <div data-layer="Container" className="Container self-stretch inline-flex justify-center items-start gap-2">
                     <div data-layer="Background+Border+Shadow" className="BackgroundBorderShadow w-full h-full p-2 bg-stone-50 rounded-2xl shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-lime-300 inline-flex flex-col items-center">
                         <div data-layer="Text" className="Text text-center justify-center text-zinc-700 text-xs font-medium font-['Space_Grotesk'] leading-4" > SEO </div>
-                        <div data-layer="Text" className="Text text-center justify-center text-zinc-900 text-xl font-bold font-['Syne'] leading-6" > Up </div>
-                        <div data-layer="Text" className="Text text-center justify-center text-emerald-800 text-[10px] font-semibold font-['Space_Grotesk'] leading-4" > Ranking Improved </div>
+                        <div data-layer="Text" className="Text text-center justify-center text-zinc-900 text-xl font-bold font-['Syne'] leading-6" >{t.webdev.impactUp}</div>
+                        <div data-layer="Text" className="Text text-center justify-center text-emerald-800 text-[10px] font-semibold font-['Space_Grotesk'] leading-4" >{t.webdev.impactRankingLabel}</div>
                     </div>
                     <div data-layer="Background+Border+Shadow" className="BackgroundBorderShadow w-full h-full p-2 bg-stone-50 rounded-2xl shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-lime-300 inline-flex flex-col items-center">
                         <div data-layer="Text" className="Text text-center justify-center text-zinc-700 text-xs font-medium font-['Space_Grotesk'] leading-4"> STACK </div>
@@ -834,8 +791,8 @@ export default function WebDeveloper() {
                         <div data-layer="Text" className="Text text-center justify-center text-emerald-800 text-[10px] font-semibold font-['Space_Grotesk'] leading-4"> App Router </div>
                     </div>
                     <div data-layer="Background+Border+Shadow" className="BackgroundBorderShadow w-full h-full p-2 bg-stone-50 rounded-2xl shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-lime-300 inline-flex flex-col items-center">
-                        <div data-layer="Text" className="Text text-center justify-center text-zinc-700 text-xs font-medium font-['Space_Grotesk'] leading-4"> SCOPE </div>
-                        <div data-layer="Text" className="Text text-center justify-center text-zinc-900 text-xl font-bold font-['Syne'] leading-6"> Full </div>
+                        <div data-layer="Text" className="Text text-center justify-center text-zinc-700 text-xs font-medium font-['Space_Grotesk'] leading-4">{t.webdev.scopeEyebrow}</div>
+                        <div data-layer="Text" className="Text text-center justify-center text-zinc-900 text-xl font-bold font-['Syne'] leading-6">{t.webdev.scopeValue}</div>
                         <div data-layer="Text" className="Text text-center justify-center text-emerald-800 text-[10px] font-semibold font-['Space_Grotesk'] leading-4"> Front + Back End </div>
                   </div>
                 </div>
@@ -852,9 +809,7 @@ export default function WebDeveloper() {
                 <div
                   data-layer="Text"
                   className="Text justify-center text-zinc-900 text-xs font-medium font-['Space_Grotesk'] leading-4"
-                >
-                  Delivered and maintained in production
-                </div>
+                >{t.webdev.deliveredNote}</div>
               </div>
               <div
                 data-layer="Container"
@@ -888,9 +843,7 @@ export default function WebDeveloper() {
                 <div
                   data-layer="Text"
                   className="Text justify-center text-slate-600 text-xs font-semibold font-['Space_Grotesk'] uppercase leading-4 tracking-wide"
-                >
-                  STACK &amp; FRAMEWORK MATRIX
-                </div>
+                >{t.webdev.stackEyebrow}</div>
               </div>
               <div
                 data-layer="Background+Border+Shadow"
@@ -931,9 +884,7 @@ export default function WebDeveloper() {
                   <div
                     data-layer="Engineered with modern standards."
                     className="EngineeredWithModernStandards self-stretch justify-center text-zinc-900 text-xl font-semibold font-['Space_Grotesk'] leading-6"
-                  >
-                    Engineered with modern standards.
-                  </div>
+                  >{t.webdev.stackTitle}</div>
                 </div>
                 <div
                   data-layer="Container"
@@ -942,12 +893,7 @@ export default function WebDeveloper() {
                   <div
                     data-layer="The stack I work in day to day across QA support and fullstack delivery, from responsive interfaces through to database verification."
                     className="HandpickedTechnologiesConfiguredForHighTrafficScalabilityErgonomicTypingAndSensoryAnimationPhysics self-stretch justify-center text-zinc-700 text-sm font-normal font-['Space_Grotesk'] leading-5"
-                  >
-                    The stack I work in day to day across QA support and
-                    fullstack delivery, from
-                    <br />
-                    responsive interfaces through to database verification.
-                  </div>
+                  >{t.webdev.stackBody1}<br />{t.webdev.stackBody2}</div>
                 </div>
                 <div data-layer="Container" className="Container self-stretch inline-flex flex-wrap lg:flex-row justify-start items-start gap-2">
                     <div data-layer="Background+Border+Shadow" className="BackgroundBorderShadow size- px-3.5 py-[5px] bg-stone-50 rounded-full shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-indigo-300 inline-flex flex-col justify-center items-center">
@@ -969,7 +915,7 @@ export default function WebDeveloper() {
                         <div data-layer="✦ PostgreSQL & SQL" className="PostgresqlSql justify-center text-zinc-900 text-xs font-semibold font-['Space_Grotesk'] leading-4 tracking-tight">✦ PostgreSQL &amp; SQL</div>
                     </div>
                     <div data-layer="Background+Border+Shadow" className="BackgroundBorderShadow size- px-3.5 py-[5px] bg-stone-50 rounded-full shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] outline outline-1 outline-offset-[-1px] outline-indigo-300 flex flex-col justify-center items-center">
-                        <div data-layer="✦ Node.js & Express" className="NodeJsExpress justify-center text-zinc-900 text-xs font-semibold font-['Space_Grotesk'] leading-4 tracking-tight">✦ Node.js &amp; Express</div>
+                        <div data-layer="✦ Node.js & Express" className="NodeJsExpress justify-center text-zinc-900 text-xs font-semibold font-['Space_Grotesk'] leading-4 tracking-tight">✦ Node.js &amp; PostgreSQL</div>
                     </div>
                 </div>
               </div>
@@ -985,9 +931,7 @@ export default function WebDeveloper() {
                 <div
                   data-layer="Text"
                   className="Text justify-center text-zinc-700 text-xs font-medium font-['Space_Grotesk'] leading-4"
-                >
-                  Version controlled with Git &amp; GitHub
-                </div>
+                >{t.webdev.versionControl}</div>
               </div>
               <div
                 data-layer="Container"
@@ -996,9 +940,7 @@ export default function WebDeveloper() {
                 <div
                   data-layer="Text"
                   className="Text justify-center text-zinc-900 text-xs font-semibold font-['Space_Grotesk'] leading-4"
-                >
-                  Team Workflow
-                </div>
+                >{t.webdev.teamWorkflow}</div>
               </div>
             </div>
           </div>
