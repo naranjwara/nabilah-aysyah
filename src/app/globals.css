@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -142,6 +142,35 @@
 
 .QualityAssurance .playwright-cypress {
   display: none;
+}
+
+.QualityAssurance .QaMetricsSection {
+  display: inline-grid;
+  row-gap: 24px;
+  column-gap: 24px;
+  align-self: stretch;
+  grid-template-rows:   240px 254px;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+}
+
+.QualityAssurance .Metric1 {
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 1;
+}
+
+.QualityAssurance .Metric2 {
+  grid-row: 1 / span 1;
+  grid-column: 2 / span 1;
+}
+
+.QualityAssurance .Metric3 {
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 1;
+}
+
+.QualityAssurance .Metric4 {
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 1;
 }
 
 @media (min-width: 1024px) {
@@ -348,5 +377,24 @@
 
   .QualityAssurance .playwright-cypress {
     display: flex;
+  }
+
+  .QualityAssurance .QaMetricsSection {
+    display: flex;
+  }
+
+  .QualityAssurance .CoreWorkArtifact {
+    display: inline-grid;
+    row-gap: 24px;
+    column-gap: 24px;
+    align-self: stretch;
+    grid-template-rows: 600px 600px;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+
+  .QualityAssurance .Artifact2 {
+    grid-row: 1 / span 1;
+    grid-column: 2 / span 1;
+    justify-self: stretch;
   }
 }
